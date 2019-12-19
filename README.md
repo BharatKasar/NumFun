@@ -5,7 +5,7 @@ A class method for different operations on a positive integer
 from math import sqrt
 from itertools import permutations
 
-class math_operations(object):
+class NumFun(object):
     """module for getting some useful math operations"""
 
     def __init__(self, num):
