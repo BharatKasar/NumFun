@@ -6,6 +6,10 @@ class NumFun(object):
 
     def __init__(self, num):
         self.num = num
+        if not isinstance(self.num, int):
+            raise Exception("The given term is not an integer")
+        if self.num < 0:
+            raise Exception("No operations for negative input")
 
     def checking_palindrome(self):
         """This function returns True if the given number is palindrome"""
