@@ -65,8 +65,7 @@ class NumFun(object):
         return reversed_number
 
     def converting_in_binary(self):
-        """This function returns a list of binary digits of a number taking input as list 
-        of digit of that number."""
+        """This function returns binary digits of a number"""
         binary_list = []
 
         if self.num != 0:
@@ -76,7 +75,7 @@ class NumFun(object):
                     binary_list.insert(0, 1) # for making binary list new remainder need to be added at the start of the list
                 else:
                     binary_list.insert(0, 0)
-                self.num = self.num / 2
+                self.num = self.num // 2
 
             blank_str = ""
             for s in binary_list:
@@ -116,18 +115,3 @@ class NumFun(object):
         str_num = str(self.num)
         num_list = [int(x) for x in str_num]
         return num_list
-
-    def get_all_permutations_of_numbers(self):
-        """This function provides list of all the permutations of a number skipping 0"""
-        possible_perm_list = list()
-        num_list = self.generate_num_list()
-        perm_list = list(permutations(num_list))
-        perm_list = [list(x) for x in perm_list]
-
-        for perm in perm_list:
-            perm_num = self.concatenate_number_from_list(
-                num_list=perm)
-            if len(str(perm_num)) == len(perm):
-                possible_perm_list.append(perm_num)
-
-        return possible_perm_list
